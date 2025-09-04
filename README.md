@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1396220842278522880/1413207208077820015/SharedScreenshot.jpg?ex=68bb1746&is=68b9c5c6&hm=c89ccb24811187040eab793b7b194b01cb75104b338aecb16fac740362bf4b10" alt="EnderHost Panel Banner" width="100%">
+</p>
+
 # 🌌 EnderHost Panel
 
 O **EnderHost Panel** é um **painel de gerenciamento de servidores** inspirado no [Pterodactyl](https://pterodactyl.io), desenvolvido para facilitar a **criação, administração e monitoramento** de servidores de jogos e aplicações.  
