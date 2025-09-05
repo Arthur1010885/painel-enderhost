@@ -1,182 +1,72 @@
-<p align="center">
-  <img src="https://cdn.discordapp.com/attachments/1396220842278522880/1413207208077820015/SharedScreenshot.jpg?ex=68bb1746&is=68b9c5c6&hm=c89ccb24811187040eab793b7b194b01cb75104b338aecb16fac740362bf4b10" alt="EnderHost Panel Banner" width="100%">
-</p>
+[![Logo Image](https://cdn.pterodactyl.io/logos/new/pterodactyl_logo.png)](https://pterodactyl.io)
 
-# 🌌 EnderHost Panel
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pterodactyl/panel/ci.yaml?label=Tests&style=for-the-badge&branch=1.0-develop)
+![Discord](https://img.shields.io/discord/122900397965705216?label=Discord&logo=Discord&logoColor=white&style=for-the-badge)
+![GitHub Releases](https://img.shields.io/github/downloads/pterodactyl/panel/latest/total?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/pterodactyl/panel?style=for-the-badge)
 
-O **EnderHost Panel** é um **painel de gerenciamento de servidores** inspirado no [Pterodactyl](https://pterodactyl.io), desenvolvido para facilitar a **criação, administração e monitoramento** de servidores de jogos e aplicações.  
+# Pterodactyl Panel
 
-⚡ Simples, moderno e otimizado para rodar em **Ubuntu, Debian e Linux Mint**.  
+Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security
+in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive
+UI to end users.
 
----
+Stop settling for less. Make game servers a first class citizen on your platform.
 
-## ✨ Funcionalidades
-- Interface web intuitiva para gerenciar servidores.  
-- Criação e configuração rápida de instâncias.  
-- Monitoramento em tempo real (CPU, RAM, rede).  
-- Sistema de usuários com diferentes permissões.  
-- Suporte a múltiplos tipos de aplicações/jogos.  
+![Image](https://cdn.pterodactyl.io/site-assets/pterodactyl_v1_demo.gif)
 
----
+## Documentation
 
-## 🛠️ Requisitos do Sistema
-- Ubuntu 20.04+ / Debian 10+ / Linux Mint 20+  
-- Banco de Dados: MariaDB ou MySQL  
-- Servidor Web: Nginx (recomendado)  
-- PHP 8.1+ com extensões necessárias  
-- Node.js 18+ e Yarn  
-- Composer  
+* [Panel Documentation](https://pterodactyl.io/panel/1.0/getting_started.html)
+* [Wings Documentation](https://pterodactyl.io/wings/1.0/installing.html)
+* [Community Guides](https://pterodactyl.io/community/about.html)
+* Or, get additional help [via Discord](https://discord.gg/pterodactyl)
 
----
+## Sponsors
 
-## 📥 Instalação Passo a Passo
+I would like to extend my sincere thanks to the following sponsors for helping fund Pterodactyl's development.
+[Interested in becoming a sponsor?](https://github.com/sponsors/matthewpi)
 
-### 🔹 1. Atualizar o sistema
-```bash
-sudo apt update && sudo apt upgrade -y
-```
+| Company                                                      | About                                                                                                                                                                                                                                           |
+|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Aussie Server Hosts**](https://aussieserverhosts.com/)    | No frills Australian Owned and operated High Performance Server hosting for some of the most demanding games serving Australia and New Zealand.                                                                                                 |
+| [**BisectHosting**](https://www.bisecthosting.com/)          | BisectHosting provides Minecraft, Valheim and other server hosting services with the highest reliability and lightning fast support since 2012.                                                                                                 |
+| [**MineStrator**](https://minestrator.com/)                  | Looking for the most highend French hosting company for your minecraft server? More than 24,000 members on our discord trust us. Give us a try!                                                                                                 |
+| [**HostEZ**](https://hostez.io)                              | US & EU Rust & Minecraft Hosting. DDoS Protected bare metal, VPS and colocation with low latency, high uptime and maximum availability. EZ!                                                                                                     |
+| [**Blueprint**](https://blueprint.zip/?pterodactyl=true)     | Create and install Pterodactyl addons and themes with the growing Blueprint framework - the package-manager for Pterodactyl. Use multiple modifications at once without worrying about conflicts and make use of the large extension ecosystem. |
+| [**indifferent broccoli**](https://indifferentbroccoli.com/) | indifferent broccoli is a game server hosting and rental company. With us, you get top-notch computer power for your gaming sessions. We destroy lag, latency, and complexity--letting you focus on the fun stuff.                              |
 
-### 🔹 2. Instalar dependências básicas
-```bash
-sudo apt install -y curl wget git unzip tar     software-properties-common     apt-transport-https     ca-certificates lsb-release
-```
+### Supported Games
 
-### 🔹 3. Instalar MariaDB
-```bash
-sudo apt install -y mariadb-server mariadb-client
-sudo systemctl enable --now mariadb
-```
+Pterodactyl supports a wide variety of games by utilizing Docker containers to isolate each instance. This gives
+you the power to run game servers without bloating machines with a host of additional dependencies.
 
-Criar banco e usuário:
-```sql
-CREATE DATABASE enderhost;
-CREATE USER 'enderuser'@'127.0.0.1' IDENTIFIED BY 'SENHA_FORTE_AQUI';
-GRANT ALL PRIVILEGES ON enderhost.* TO 'enderuser'@'127.0.0.1' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-EXIT;
-```
+Some of our core supported games include:
 
-### 🔹 4. Instalar PHP 8.1 + extensões
-```bash
-sudo add-apt-repository ppa:ondrej/php -y
-sudo apt update
-sudo apt install -y     php8.1 php8.1-cli php8.1-common php8.1-mysql php8.1-gd     php8.1-mbstring php8.1-bcmath php8.1-curl php8.1-xml php8.1-zip     php8.1-fpm
-```
+* Minecraft — including Paper, Sponge, Bungeecord, Waterfall, and more
+* Rust
+* Terraria
+* Teamspeak
+* Mumble
+* Team Fortress 2
+* Counter Strike: Global Offensive
+* Garry's Mod
+* ARK: Survival Evolved
 
-### 🔹 5. Instalar Composer
-```bash
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-```
+In addition to our standard nest of supported games, our community is constantly pushing the limits of this software
+and there are plenty more games available provided by the community. Some of these games include:
 
-### 🔹 6. Instalar Node.js + Yarn
-```bash
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt install -y nodejs
-npm install -g yarn
-```
+* Factorio
+* San Andreas: MP
+* Pocketmine MP
+* Squad
+* Xonotic
+* Starmade
+* Discord ATLBot, and most other Node.js/Python discord bots
+* [and many more...](https://github.com/parkervcp/eggs)
 
-### 🔹 7. Instalar Nginx
-```bash
-sudo apt install -y nginx
-sudo systemctl enable --now nginx
-```
+## License
 
-### 🔹 8. Baixar o EnderHost Panel
-```bash
-cd /var/www/
-sudo git clone https://github.com/seu-usuario/enderhost.git painel
-cd painel
-```
+Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors.
 
-Permissões:
-```bash
-sudo chown -R www-data:www-data /var/www/painel
-sudo chmod -R 755 /var/www/painel/storage /var/www/painel/bootstrap/cache
-```
-
-### 🔹 9. Instalar dependências Laravel
-```bash
-composer install --no-dev --optimize-autoloader
-cp .env.example .env
-php artisan key:generate
-```
-
-Editar `.env`:
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=enderhost
-DB_USERNAME=enderuser
-DB_PASSWORD=SENHA_FORTE_AQUI
-```
-
-Rodar migrações:
-```bash
-php artisan migrate --seed
-```
-
-### 🔹 10. Compilar frontend
-```bash
-yarn install
-yarn build
-```
-
-### 🔹 11. Configurar Nginx
-Criar arquivo de configuração:
-```bash
-sudo nano /etc/nginx/sites-available/enderhost.conf
-```
-
-Exemplo de configuração:
-```nginx
-server {
-    listen 80;
-    server_name seu-dominio.com;
-
-    root /var/www/painel/public;
-    index index.php index.html;
-
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include fastcgi_params;
-    }
-}
-```
-
-Ativar site:
-```bash
-sudo ln -s /etc/nginx/sites-available/enderhost.conf /etc/nginx/sites-enabled/
-sudo systemctl restart nginx
-```
-
-### 🔹 12. (Opcional) Configurar HTTPS com Let's Encrypt
-```bash
-sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d seu-dominio.com
-```
-
----
-
-## 🚀 Finalização
-Acesse no navegador:  
-```
-http://seu-dominio.com
-```
-
-E pronto 🎉 seu **EnderHost Panel** está rodando!  
-
----
-
-## 📌 Status
-⚠️ O projeto ainda está em **desenvolvimento**, novas funcionalidades estão sendo adicionadas.  
-Contribuições são bem-vindas 🙌  
-
----
+Code released under the [MIT License](./LICENSE.md).
